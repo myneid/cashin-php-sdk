@@ -8,7 +8,7 @@ class DepositStatus extends GenericTest
 
     public function testGetPaymentMethods()
     {
-        $data = $this->directa24->refundStatus(168250);
+        $data = $this->directa24->depositStatus(300533668);
         $this->assertEquals('CANCELLED', $data->status);
     }
 }

@@ -4,12 +4,9 @@
 namespace Directa24;
 
 use Directa24\client\Directa24Client;
-use Directa24\exception\Directa24Exception;
-use Directa24\interfaces\IDirectaRequests;
-use Directa24\request\CreateDepositRequest;
 use Directa24\request\CreateDepositResponse;
 
-class Directa24 implements IDirectaRequests
+class Directa24
 {
 
     private static $directa_24_client;
@@ -39,46 +36,5 @@ class Directa24 implements IDirectaRequests
                 self::$directa_24_client->setBaseUrl(self::$SANDBOX_URL);
             }
         }
-    }
-
-    public function createDeposit($createDepositRequest)
-    {
-        self::$directa_24_client->createDeposit($createDepositRequest);
-    }
-
-
-    public function depositStatus($id)
-    {
-        return $this->directa_24_client->depositStatus($id);
-    }
-
-
-    public function paymentMethods($country_code)
-    {
-        return $this->directa_24_client->paymentMethods($country_code);
-    }
-
-
-    public function currencyExchange($country, $amount)
-    {
-        return $this->directa_24_client->currencyExchange($country, $amount);
-    }
-
-
-    public function refund($create_refund_request)
-    {
-        return $this->directa_24_client->refund($create_refund_request);
-    }
-
-
-    public function refundStatus($refund_id)
-    {
-        return $this->directa_24_client->refundStatus($refund_id);
-    }
-
-
-    public function banks($country_code)
-    {
-        return $this->directa_24_client->banks($country_code);
     }
 }
