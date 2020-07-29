@@ -4,23 +4,23 @@
 namespace Directa24\client;
 
 
-use Directa24\https\Curl;
-use Directa24\interfaces\IDirectaRequests;
+use Directa24\util\Curl;
+use Directa24\interfaces\IDirectaRequest;
 use Directa24\util\Helpers;
 use Directa24\exception\Directa24Exception;
 
-class Directa24Client implements IDirectaRequests
+class Directa24Client implements IDirectaRequest
 {
 
-    private static $DEPOSIT_V3_PATH = "v3/deposits/";
+    private static $DEPOSIT_V3_PATH = "/v3/deposits/";
 
-    private static $PAYMENT_METHODS_V3_PATH = "v3/payment_methods";
+    private static $PAYMENT_METHODS_V3_PATH = "/v3/payment_methods";
 
-    private static $BANKS_V3_PATH = "v3/banks";
+    private static $BANKS_V3_PATH = "/v3/banks";
 
-    private static $CURRENCY_EXCHANGE_V3_PATH = "v3/exchange_rates";
+    private static $CURRENCY_EXCHANGE_V3_PATH = "/v3/exchange_rates";
 
-    private static $REFUND_V3_PATH = "v3/refunds/";
+    private static $REFUND_V3_PATH = "/v3/refunds/";
 
     private $deposit_key;
 
@@ -55,7 +55,7 @@ class Directa24Client implements IDirectaRequests
         $this->httpClient->httpHeader('X-Date', Helpers::getCurrentDate());
         $this->httpClient->httpHeader('Authorization', Helpers::buildDepositKeySignature($this->secret_key, Helpers::getCurrentDate(), $this->deposit_key, $createDepositArray));
         $this->httpClient->httpHeader('X-Login', $this->deposit_key);
-        if ($this->idempotency_key && !empty($this->idempotency_key)) {
+        if (!empty($this->idempotency_key)) {
             $this->httpClient->httpHeader('X-Idempotency-Key', $this->idempotency_key);
         }
         return $this->makeRequest();
@@ -95,7 +95,7 @@ class Directa24Client implements IDirectaRequests
         $this->httpClient->httpHeader('X-Date', Helpers::getCurrentDate());
         $this->httpClient->httpHeader('Authorization', Helpers::buildDepositKeySignature($this->secret_key, Helpers::getCurrentDate(), $this->deposit_key, $create_refund_request_array));
         $this->httpClient->httpHeader('X-Login', $this->deposit_key);
-        if ($this->idempotency_key && !empty($this->idempotency_key)) {
+        if (!empty($this->idempotency_key)) {
             $this->httpClient->httpHeader('X-Idempotency-Key', $this->idempotency_key);
         }
         return $this->makeRequest()->refund_id;

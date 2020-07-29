@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Directa24\https;
+namespace Directa24\util;
 
 class Curl
 {

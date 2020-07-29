@@ -11,7 +11,7 @@ use Directa24\response\DepositStatusResponse;
 use Directa24\response\PaymentMethodResponse;
 use Directa24\response\RefundStatus;
 
-interface IDirectaRequests
+interface IDirectaRequest
 {
     /**
      * Creates a deposit.

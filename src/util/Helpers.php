@@ -6,9 +6,9 @@ class Helpers
 {
     private static $DATE_TIME_FORMATTER = "Y-m-d\TH:i:s\Z";
 
-    public static $BEARER_AUTHORIZATION_SCHEME = "Bearer ";
+    private static $BEARER_AUTHORIZATION_SCHEME = "Bearer ";
 
-    public static $D24_AUTHORIZATION_SCHEME = "D24 ";
+    private static $D24_AUTHORIZATION_SCHEME = "D24 ";
 
     public static function getCurrentDate()
     {

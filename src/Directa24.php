@@ -13,16 +13,16 @@ class Directa24
 
     private static $is_production;
 
-    private static $SANDBOX_URL = 'https://api-stg.directa24.com/';
+    private static $SANDBOX_URL = 'https://api-stg.directa24.com';
 
-    private static $PRODUCTION_URL = 'https://api.directa24.com/';
+    private static $PRODUCTION_URL = 'https://api.directa24.com';
 
     public static function getInstance($x_login, $api_key, $secret_key, $idempotency = '')
     {
-        if (!self::$is_production) {
-            return self::$directa_24_client = new Directa24Client($x_login, $api_key, $secret_key, self::$SANDBOX_URL, $idempotency);
-        } else {
+        if (self::$is_production === true) {
             return self::$directa_24_client = new Directa24Client($x_login, $api_key, $secret_key, self::$PRODUCTION_URL, $idempotency);
+        } else {
+            return self::$directa_24_client = new Directa24Client($x_login, $api_key, $secret_key, self::$SANDBOX_URL, $idempotency);
         }
     }
 
