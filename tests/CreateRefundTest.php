@@ -22,8 +22,7 @@ class CreateRefundTest extends GenericTest
 
         $create_refund_request = new \Directa24\request\CreateRefundRequest();
         $create_refund_request->deposit_id = 300532800;
-        $create_refund_request->merchant_invoice_id = '1000';
-        $create_refund_request->merchant_invoice_id = '84024';
+        $create_refund_request->invoice_id = '84024';
         $create_refund_request->amount = 12;
         $create_refund_request->bank_account = $bank_account;
         $create_refund_request->comments = 'test';

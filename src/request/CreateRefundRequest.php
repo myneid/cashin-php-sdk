@@ -7,7 +7,7 @@ class CreateRefundRequest
 {
     public $deposit_id;
 
-    public $merchant_invoice_id;
+    public $invoice_id;
 
     public $amount;
 

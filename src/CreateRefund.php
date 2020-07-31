@@ -20,7 +20,7 @@ $bank_account->branch = "12";
 
 $create_refund_request = new CreateRefundRequest();
 $create_refund_request->deposit_id = 94600022;
-$create_refund_request->merchant_invoice_id = '8318';
+$create_refund_request->invoice_id = '8318';
 $create_refund_request->amount = 1;
 $create_refund_request->bank_account = $bank_account;
 $create_refund_request->comments = 'test';

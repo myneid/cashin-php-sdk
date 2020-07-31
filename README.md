@@ -169,7 +169,7 @@ $bank_account->branch = "12";
 
 $create_refund_request = new CreateRefundRequest();
 $create_refund_request->deposit_id = 300533180;
-$create_refund_request->merchant_invoice_id = 'MP_b451645f30b8415ba833d37f3fa21209';
+$create_refund_request->invoice_id = 'MP_b451645f30b8415ba833d37f3fa21209';
 $create_refund_request->amount = 1;
 $create_refund_request->bank_account = $bank_account;
 $create_refund_request->comments = 'test';
