@@ -1,13 +1,13 @@
 {
-    "name": "directa24/cashin",
+    "name": "directa24/cashin-php-sdk",
+    "description": "Directa24 PHP SDK",
     "type": "library",
-    "description": "package_description",
+    "homepage": "https://github.com/directa24",
+    "license": "MIT",
     "keywords": [
         "directa24",
         "cashin"
     ],
-    "homepage": "https://github.com/directa24",
-    "license": "MIT",
     "authors": [
         {
             "name": "Directa24",
