@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 
-The official [Directa 24][directa24] Java client library.
+The official [Directa24][directa24] PHP client library.
 
 
 ### Requirements
@@ -14,7 +14,7 @@ The official [Directa 24][directa24] Java client library.
 Via Composer
 
 ``` bash
-$ composer require directa24/cashin
+$ composer require directa24/cashin-php-sdk
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ $x_login = "fUEhPEKrUt";
 $api_key = "lTMZgRTakW";
 $secret_key = "wSHTfsMMdNskTppilncuZPEklgLmdUAOg";
 
-$directa24 = Directa24::getInstance($$x_login, $api_key, $secret_key);
+$directa24 = Directa24::getInstance($x_login, $api_key, $secret_key);
 ```
 #### Set Production Environment
 Before remember to  specify production credentials. See [API docs][api-docs] 
@@ -207,6 +207,6 @@ Please see the [API docs][api-docs] for the most up-to-date documentation.
 
 [ico-version]: https://img.shields.io/packagist/v/directa24/cashin.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/directa24/cashin
+[link-packagist]: https://packagist.org/packages/directa24/cashin-php-sdk
 [directa24]: https://directa24.com
 [api-docs]: https://docs.directa24.com/deposits-api
