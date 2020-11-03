@@ -11,13 +11,23 @@ class DepositStatusResponse
 
     public $invoice_id;
 
+    public $country;
+
     public $currency;
 
-    public $amount;
+    public $usd_amount;
+
+    public $local_amount;
 
     public $bonus_amount;
+
+    public $bonus_relative;
+
+    public $payment_method;
 
     public $payment_type;
 
     public $status;
+
+    public $card_detail;
 }
