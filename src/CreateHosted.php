@@ -14,6 +14,7 @@ $create_deposit_request->amount = 100;
 $create_deposit_request->country = "BR";
 $create_deposit_request->currency = "BRL";
 $create_deposit_request->language = "en";
+$create_deposit_request->payment_types = array ("BANK_TRANSFER", "VOUCHER");
 
 
 

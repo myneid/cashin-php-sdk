@@ -60,7 +60,6 @@ $create_deposit_request->error_url = "https://yoursite.com/deposit/108/error";
 $create_deposit_request->notification_url = "https://yoursite.com/ipn";
 $create_deposit_request->test = true;
 $create_deposit_request->mobile = false;
-$create_deposit_request->payment_types = array ("BANK_TRANSFER", "VOUCHER");
 
 
 $directa24 = Directa24::getInstance("fUEhPEKrUt", "lTMZgRTakW", "wSHTfsMMdNskTppilncuZPEklgLmdUAOg");
