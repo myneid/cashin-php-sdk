@@ -19,6 +19,8 @@ class CreateDepositRequest
 
     public $payment_type;
 
+    public $payment_types;
+
     public $bank_account;
 
     public $early_release;
