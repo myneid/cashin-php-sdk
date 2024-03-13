@@ -50,7 +50,7 @@ class Directa24Client implements IDirectaRequest
 
     public function createDeposit($createDepositRequest)
     {
-        $createDepositArray = json_decode(utf8_encode(json_encode($createDepositRequest)), true);
+        $createDepositArray = json_decode(mb_convert_encoding(json_encode($createDepositRequest), 'UTF-8', 'ISO-8859-1'), true);
         $this->httpClient = Curl::post($this->base_url . self::$DEPOSIT_V3_PATH, $createDepositArray);
         $this->httpClient->httpHeader('X-Date', Helpers::getCurrentDate());
         $this->httpClient->httpHeader('Authorization', Helpers::buildDepositKeySignature($this->secret_key, Helpers::getCurrentDate(), $this->deposit_key, $createDepositArray));
