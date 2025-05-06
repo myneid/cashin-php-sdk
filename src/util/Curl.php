@@ -341,6 +341,8 @@ class Curl
      */
     private function _execute($method)
     {
+        //force ipv4 since pandablue cannot read approval from ipv6
+        $this->option('CURLOPT_IPRESOLVE', CURL_IPRESOLVE_V4);
         // Method specific options
         switch ($method) {
             case 'GET':
